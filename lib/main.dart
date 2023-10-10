@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/layout/home_layout.dart';
+import 'package:todo/shared/styles/my_theme_data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme:MyThemeData.lightTheme,
       initialRoute:HomeLayout.routeName ,
       routes:{
         HomeLayout.routeName:(context) => HomeLayout(),
