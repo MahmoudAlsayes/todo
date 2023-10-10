@@ -8,32 +8,38 @@ class TasksTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-
-        CalendarTimeline(
-          initialDate: DateTime.now(),
-          firstDate: DateTime.now().subtract(Duration(days: 365)),
-          lastDate: DateTime.now().add(Duration(days: 365)),
-          onDateSelected: (date) => print(date),
-          leftMargin: 20,
-          // shrink: true,
-          monthColor: primaryColor,
-          dayColor: primaryColor.withOpacity(.70),
-          activeDayColor: Colors.white,
-          activeBackgroundDayColor:primaryColor,
-          dotsColor: Colors.white,
-          selectableDayPredicate: (date) =>true ,
-          // date.day != 28
-          locale: 'en_ISO',
+    return
+      Scaffold(
+        appBar: AppBar(
+          title: Text("ToDo"),
         ),
-        Expanded(
-          child: ListView.builder(itemBuilder: (context, index) {
-            return TaskItem();
-          }, itemCount: 20,),
-        )
+        body: Column(
+        children: [
 
-      ],
-    );
+          CalendarTimeline(
+            initialDate: DateTime.now(),
+            firstDate: DateTime.now().subtract(Duration(days: 365)),
+            lastDate: DateTime.now().add(Duration(days: 365)),
+            onDateSelected: (date) => print(date),
+            leftMargin: 20,
+            // shrink: true,
+            monthColor: primaryColor,
+            dayColor: primaryColor.withOpacity(.70),
+            activeDayColor: Colors.white,
+            activeBackgroundDayColor:primaryColor,
+            dotsColor: Colors.white,
+            selectableDayPredicate: (date) =>true ,
+            // date.day != 28
+            locale: 'en_ISO',
+          ),
+          Expanded(
+            child: ListView.builder(itemBuilder: (context, index) {
+              return TaskItem();
+            }, itemCount: 20,),
+          )
+
+        ],
+    ),
+      );
   }
 }

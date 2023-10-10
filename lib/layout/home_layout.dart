@@ -19,9 +19,7 @@ class _HomeLayoutState extends State<HomeLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      appBar: AppBar(
-        title: Text("Todo"),
-      ),
+
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -54,7 +52,7 @@ class _HomeLayoutState extends State<HomeLayout> {
                   Icons.settings,
                   size: 30,
                 ),
-                label: "")
+                label: ""),
           ],
         ),
       ),
@@ -63,8 +61,17 @@ class _HomeLayoutState extends State<HomeLayout> {
   }
 
   void showSheet() {
-    showModalBottomSheet(context: context, builder: (context) {
-      return AddTaskBottomSheet();
-    },);
+    showModalBottomSheet(
+      context: context,
+
+      isScrollControlled: true,
+      builder: (context) {
+        return Padding(
+          padding:
+              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+          child: AddTaskBottomSheet(),
+        );
+      },
+    );
   }
 }
