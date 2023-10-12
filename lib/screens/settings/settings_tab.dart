@@ -29,7 +29,8 @@ class _SettingsTabState extends State<SettingsTab> {
             Text(
               AppLocalizations.of(context)!.lang,
               textAlign: TextAlign.start,
-              style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold,
+              color:  proo.modeApp==ThemeMode.light?Colors.black:Colors.white),
             ),
             SizedBox(
               height: 18,
@@ -44,8 +45,8 @@ class _SettingsTabState extends State<SettingsTab> {
                 width: double.infinity,
                 height: 50,
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.zero),
+                    color: Colors.transparent,
+                    borderRadius: BorderRadius.circular(15),
                     border: Border.all(color: primaryColor)),
                 child: Row(
                   children: [
@@ -67,7 +68,8 @@ class _SettingsTabState extends State<SettingsTab> {
             Text(
               AppLocalizations.of(context)!.mod,
               textAlign: TextAlign.start,
-              style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold,
+                  color:  proo.modeApp==ThemeMode.light?Colors.black:Colors.white,),
             ),
             SizedBox(
               height: 18,
@@ -82,12 +84,13 @@ class _SettingsTabState extends State<SettingsTab> {
                 width: double.infinity,
                 height: 50,
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.zero),
+                    color: Colors.transparent,
+                    borderRadius: BorderRadius.circular(15),
+
                     border: Border.all(color: primaryColor)),
                 child: Row(
                   children: [
-                    Text("Light",
+                    Text(proo.modeApp==ThemeMode.light?AppLocalizations.of(context)!.lig:AppLocalizations.of(context)!.drk,
                         style: TextStyle(fontSize: 20, color: primaryColor),
                         textAlign: TextAlign.left),
                     Spacer(),

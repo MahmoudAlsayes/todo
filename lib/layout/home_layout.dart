@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo/provider/my_provider.dart';
 import 'package:todo/screens/tasks/add_task_bottom_sheet.dart';
 import 'package:todo/screens/tasks/tasks_tab.dart';
 
@@ -18,6 +20,7 @@ class _HomeLayoutState extends State<HomeLayout> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Scaffold(
       extendBody: true,
 
@@ -27,10 +30,10 @@ class _HomeLayoutState extends State<HomeLayout> {
           showSheet();
         },
         child: Icon(Icons.add),
-        shape: CircleBorder(side: BorderSide(color: Colors.white, width: 3)),
+        shape: CircleBorder(side: BorderSide(color:provider.modeApp==ThemeMode.light? Colors.white:Color(0xff141922), width: 3)),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.white,
+        color: provider.modeApp==ThemeMode.light? Colors.white: Color(0xff141922),
         notchMargin: 8,
         shape: CircularNotchedRectangle(),
         child: BottomNavigationBar(

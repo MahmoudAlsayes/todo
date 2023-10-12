@@ -7,6 +7,7 @@ class MyThemeData {
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: mint,
 
+
     // textTheme: TextTheme(
     //   bodySmall: GoogleFonts.elMessiri(
     //     fontSize: 20,
@@ -38,6 +39,7 @@ class MyThemeData {
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: DarkBackGround,
 
+
     // textTheme: TextTheme(
     //   bodySmall: GoogleFonts.elMessiri(
     //     fontSize: 20,
@@ -62,7 +64,7 @@ class MyThemeData {
       showUnselectedLabels: false,
       showSelectedLabels: false,
       selectedItemColor: primaryColor,
-      unselectedItemColor: Colors.white,
+      unselectedItemColor: Colors.grey,
 
     ),
   );

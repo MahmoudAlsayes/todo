@@ -2,15 +2,27 @@ import 'package:flutter/material.dart';
 
 class MyProvider extends ChangeNotifier {
   String languageCode = "en";
+  ThemeMode modeApp=ThemeMode.light;
 
-   changeLanguage(String lanCode) {
+  void changeLanguage(String lanCode) {
     languageCode=lanCode;
      notifyListeners();
 
   }
+
+  changeTheme(ThemeMode mode)
+  {
+    modeApp=mode;
+    // if(modeApp==ThemeMode.light)
+    //   {
+    //     modeApp=ThemeMode.dark;
+    //   }
+    // else
+    //   {
+    //     modeApp=ThemeMode.light;
+    //   }
+    notifyListeners();
+  }
+
+
 }
-// if (languageCode == "en") {
-//   languageCode = "ar";
-// } else {
-//   languageCode = "en";
-// }

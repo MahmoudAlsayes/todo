@@ -42,14 +42,14 @@ class MyApp extends StatelessWidget {
     //   ],
       locale: Locale(pro.languageCode),
       debugShowCheckedModeBanner: false,
-      theme:MyThemeData.lightTheme,
       initialRoute:HomeLayout.routeName ,
       routes:{
         HomeLayout.routeName:(context) => HomeLayout(),
       },
+      themeMode: pro.modeApp,
+      theme:  MyThemeData.lightTheme,
+      darkTheme: MyThemeData.darkTheme,
 
-
-      // darkTheme: ThemeData.dark(),
     );
   }
 }
