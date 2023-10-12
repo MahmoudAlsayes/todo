@@ -2,6 +2,7 @@ import 'package:calendar_timeline/calendar_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:todo/screens/tasks/task_item.dart';
 import 'package:todo/shared/styles/colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TasksTab extends StatelessWidget {
   const TasksTab({super.key});
@@ -11,7 +12,7 @@ class TasksTab extends StatelessWidget {
     return
       Scaffold(
         appBar: AppBar(
-          title: Text("ToDo"),
+          title: Text(AppLocalizations.of(context)!.appTitle),
         ),
         body: Column(
         children: [

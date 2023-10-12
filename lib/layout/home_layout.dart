@@ -3,6 +3,7 @@ import 'package:todo/screens/tasks/add_task_bottom_sheet.dart';
 import 'package:todo/screens/tasks/tasks_tab.dart';
 
 import '../screens/settings/settings_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeLayout extends StatefulWidget {
   static const String routeName = "hmoe";

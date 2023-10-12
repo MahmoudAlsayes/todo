@@ -1,0 +1,16 @@
+{
+  "appTitle": "ToDo",
+  "settingTitle": "Setting",
+  "addTask": "Add New Task",
+  "taskTitle": "Task Title",
+  "description": "Task Description",
+  "lang": "Language",
+  "mod": "Mode",
+  "time": "Select Date",
+  "button": "Add Task",
+  "arabic": "Arabic",
+  "eng": "English",
+  "lig": "light",
+  "drk": "dark"
+
+}

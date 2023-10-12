@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:todo/models/task_model.dart';
 import 'package:todo/shared/firebase/firebase_function.dart';
 import 'package:todo/shared/styles/colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddTaskBottomSheet extends StatefulWidget {
   @override
@@ -25,7 +26,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "Add New Task",
+            AppLocalizations.of(context)!.addTask,
             textAlign: TextAlign.center,
             style: GoogleFonts.poppins(
                 fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
@@ -36,7 +37,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
           TextFormField(
             controller: titleController,
             decoration: InputDecoration(
-              label: Text("Task Title"),
+              label: Text(AppLocalizations.of(context)!.taskTitle),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(color: primaryColor),
@@ -53,7 +54,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
           TextFormField(
             controller: descriptionController,
             decoration: InputDecoration(
-              label: Text("Task Description"),
+              label: Text(AppLocalizations.of(context)!.description),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(color: primaryColor),
@@ -68,7 +69,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
             height: 10,
           ),
           Text(
-            "Select Date",
+            AppLocalizations.of(context)!.time,
             textAlign: TextAlign.start,
             style: GoogleFonts.poppins(
                 fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black),
@@ -96,7 +97,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 Description: descriptionController.text,
                 date: selectedDate.millisecondsSinceEpoch);
             FirebaseFunction.addTask(taskModel);
-          }, child: Text("Add Task"))
+          }, child: Text(AppLocalizations.of(context)!.button))
         ],
       ),
     );
