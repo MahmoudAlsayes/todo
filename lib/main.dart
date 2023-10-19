@@ -1,8 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo/layout/home_layout.dart';
 import 'package:todo/provider/my_provider.dart';
+import 'package:todo/screens/login/login.dart';
+import 'package:todo/screens/tasks/task_edit.dart';
 import 'package:todo/shared/styles/my_theme_data.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -14,6 +17,7 @@ void main()async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // FirebaseFirestore.instance.disableNetwork();
   runApp(ChangeNotifierProvider(
       create: (context) => MyProvider(),
       child: const MyApp()));
@@ -42,9 +46,11 @@ class MyApp extends StatelessWidget {
     //   ],
       locale: Locale(pro.languageCode),
       debugShowCheckedModeBanner: false,
-      initialRoute:HomeLayout.routeName ,
+      initialRoute:LoginScreen.routeName ,
       routes:{
         HomeLayout.routeName:(context) => HomeLayout(),
+        TaskEdit.routeName:(context) => TaskEdit(),
+        LoginScreen.routeName:(context) => LoginScreen(),
       },
       themeMode: pro.modeApp,
       theme:  MyThemeData.lightTheme,
